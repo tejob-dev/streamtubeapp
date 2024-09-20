@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="navigation_drawer_open">Ouvrir le tiroir de navigation</string>
+    <string name="navigation_drawer_close">Fermer le tiroir de navigation</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">tetyconstantve@gmail.com</string>
+    <string name="nav_header_desc">En-tête de navigation</string>
+    <string name="action_settings">Paramètres</string>
+
+    <string name="menu_home">ANIME MANGA-MANHWA</string>
+    <string name="menu_gallery">Politique de confidentialité</string>
+    <string name="menu_slideshow">À propos de nous</string>
+    <string name="hint_btn_close">Fermer !</string>
+    <string name="share_messageSave">Partager !</string>
+    <string name="cancel">Annuler !</string>
+    <string name="hint_share_panel">Message communautaire !</string>
+    <string name="soc_share_messageSave">Aimez-vous l\'application vidéo pour regarder des teasers, bandes-annonces, actualités sur les films et séries, voici l\'application %s qui inclut tout, installez-la ici -> \n %s</string>
+    <string name="vos_manga_et_manhwa_en_stream">Vos mangas et manhwas en streaming</string>
+    <string name="veuillez_activer_votre_acc_s_internet">Veuillez activer votre accès internet ou contactez le développeur. tetyconstantve@gmail.com</string>
+    <string name="allez_sur_le_store">Allez sur le store !</string>
+    <string name="plus_tard">Plus tard !</string>
+    <string name="vous_ne_pouvez_pas_continuer_sans_faire_de_mise_jour">Vous ne pouvez pas continuer sans effectuer de mise à jour.</string>
+    <string name="advertisement">Publicité</string>
+    <string name="vous_avez_la_derni_re_version_disponible_de_l_application">Vous avez la dernière version disponible de l\'application.</string>
+</resources>
