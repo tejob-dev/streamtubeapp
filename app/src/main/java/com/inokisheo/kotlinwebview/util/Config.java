@@ -14,7 +14,8 @@ public class Config {
 
 
     public static final String USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36";
-    public static String update_url = "https://raw.githubusercontent.com/SICADEVD/ccbm/update_onplaystore_b/app/update-changelog.json";
+    public static String update_url = "https://raw.githubusercontent.com/tejob-dev/streamtubeapp/kotlin-mmstream/app/update-changelog.json";
+    ///tejob-dev/streamtubeapp/tree/kotlin-mmstream
 
     public static boolean isNetWorkOk(Activity context) {
         boolean status = false;
