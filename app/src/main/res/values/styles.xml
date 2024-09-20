@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Style pour le FloatingActionButton avec l'icône en blanc -->
+    <style name="CustomFABStyle" parent="Widget.MaterialComponents.FloatingActionButton">
+        <!-- Couleur de fond du bouton (facultatif) -->
+        <item name="backgroundTint">@color/white</item>
+        <!-- Couleur de l'icône -->
+        <item name="android:tint">@android:color/white</item>
+    </style>
+
+</resources>

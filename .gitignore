@@ -1,0 +1,38 @@
+# Android Studio
+.gradle/
+.idea/
+build/
+captures/
+.externalNativeBuild/
+.cxx/
+local.properties
+/.run/
+navigation.json
+*.hprof
+
+# Gradle
+.gradle/
+build/
+**/build/
+**/out/
+gradle-app.setting
+gradle-wrapper.jar
+
+# Proguard
+proguard/
+proguard-rules.pro
+proguard-project.txt
+
+# Keystore files
+*.jks
+*.keystore
+*.pem
+
+# Google Services JSON file
+google-services.json
+app/google-services.json
+
+# IntelliJ IDEA/Android Studio specific files
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/gradle.xml

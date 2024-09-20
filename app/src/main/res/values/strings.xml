@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">MM-Anime</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">tetyconstantve@gmail.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">ANIME MANGA-MANHWA</string>
+    <string name="menu_gallery">Privacy policy</string>
+    <string name="menu_slideshow">About us</string>
+    <string name="hint_btn_close">Fermer !</string>
+    <string name="share_messageSave">Partager !</string>
+    <string name="cancel">Cancel !</string>
+    <string name="hint_share_panel">Community message !</string>
+    <string name="soc_share_messageSave">Do you like video app to watch Teaser, Trailer, News about movies and series, there is %s application which includes all, install here -> \n %s</string>
+    <string name="vos_manga_et_manhwa_en_stream">" Vos manga et manhwa en stream"</string>
+    <string name="veuillez_activer_votre_acc_s_internet">Veuillez activer votre accès à internet ou contactez le dev. tetyconstantve@gmail.com</string>
+    <string name="allez_sur_le_store">Allez sur le store !</string>
+    <string name="plus_tard">Plus tard!</string>
+    <string name="vous_ne_pouvez_pas_continuer_sans_faire_de_mise_jour">Vous ne pouvez pas continuer sans faire de mise à jour.</string>
+    <string name="advertisement">Advertisement</string>
+    <string name="vous_avez_la_derni_re_version_disponible_de_l_application">Vous avez la dernière version disponible de l\'application.</string>
+</resources>
