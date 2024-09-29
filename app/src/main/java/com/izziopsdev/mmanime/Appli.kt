@@ -5,8 +5,8 @@ import android.content.Context
 import androidx.multidex.MultiDex
 import androidx.multidex.MultiDexApplication
 import androidx.work.Configuration
-import cat.ereza.customactivityoncrash.CustomActivityOnCrash
-import cat.ereza.customactivityoncrash.config.CaocConfig
+//import cat.ereza.customactivityoncrash.CustomActivityOnCrash
+//import cat.ereza.customactivityoncrash.config.CaocConfig
 //import io.monedata.Monedata.Consent
 //import io.monedata.Monedata.initialize
 //import io.monedata.Monedata.isInitialized
@@ -25,7 +25,7 @@ class  Appli: MultiDexApplication(), Configuration.Provider{
     @SuppressLint("RestrictedApi")
     override fun attachBaseContext(base: Context?) {
         super.attachBaseContext(base)
-        CustomActivityOnCrash.install(applicationContext)
+//        CustomActivityOnCrash.install(applicationContext)
     }
 
     override fun onCreate() {
@@ -35,7 +35,7 @@ class  Appli: MultiDexApplication(), Configuration.Provider{
 
         MultiDex.install(this)
 
-        CaocConfig.Builder.create().apply()
+//        CaocConfig.Builder.create().apply()
 
 //        if (!isInitialized) {
 //            initialize(this, MONID, true) { isReady: Boolean? ->
@@ -54,9 +54,15 @@ class  Appli: MultiDexApplication(), Configuration.Provider{
 //        OneSignal.setAppId(ONESIGNAL_APP_ID);
     }
 
-    override fun getWorkManagerConfiguration(): Configuration {
-        return Configuration.Builder()
+//    override fun getWorkManagerConfiguration(): Configuration {
+//        return Configuration.Builder()
+//            .build()
+//    }
+
+    override val workManagerConfiguration: Configuration
+        get() = Configuration.Builder()
             .build()
-    }
+//        get() = TODO("Not yet implemented")
+
 
 }

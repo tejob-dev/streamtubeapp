@@ -1,6 +1,6 @@
 package com.izziopsdev.mmanime
 
-import com.izziopsdev.mmanime.util.encodeUpdate
+//import com.izziopsdev.mmanime.util.encodeUpdate
 import org.junit.Test
 
 import org.junit.Assert.*
@@ -18,6 +18,6 @@ class ExampleUnitTest {
 
     @Test
     fun encodeText(){
-        println(encodeUpdate)
+//        println(encodeUpdate)
     }
 }
