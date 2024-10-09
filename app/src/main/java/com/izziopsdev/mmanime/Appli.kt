@@ -5,6 +5,12 @@ import android.content.Context
 import androidx.multidex.MultiDex
 import androidx.multidex.MultiDexApplication
 import androidx.work.Configuration
+import com.onesignal.OneSignal
+import com.onesignal.debug.LogLevel
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+
 //import cat.ereza.customactivityoncrash.CustomActivityOnCrash
 //import cat.ereza.customactivityoncrash.config.CaocConfig
 //import io.monedata.Monedata.Consent
@@ -16,7 +22,7 @@ import androidx.work.Configuration
 class  Appli: MultiDexApplication(), Configuration.Provider{
 
     //private val MONID = "ef5cd687-dbcb-42e0-a42f-10d9923e9333"
-    private val ONESIGNAL_APP_ID = "59e01ed8-9f20-4b6a-97b7-419ba86790f0"
+    private val ONESIGNAL_APP_ID = "9a374172-41c0-4fed-afb4-42751ffb7d35"
 
     companion object{
         lateinit var CONTEXTGB: Context
@@ -34,6 +40,18 @@ class  Appli: MultiDexApplication(), Configuration.Provider{
         CONTEXTGB = this
 
         MultiDex.install(this)
+
+        // Verbose Logging set to help debug issues, remove before releasing your app.
+        OneSignal.Debug.logLevel = LogLevel.VERBOSE
+
+        // OneSignal Initialization
+        OneSignal.initWithContext(this, ONESIGNAL_APP_ID)
+
+        // requestPermission will show the native Android notification permission prompt.
+        // NOTE: It's recommended to use a OneSignal In-App Message to prompt instead.
+        CoroutineScope(Dispatchers.IO).launch {
+            OneSignal.Notifications.requestPermission(false)
+        }
 
 //        CaocConfig.Builder.create().apply()
 
