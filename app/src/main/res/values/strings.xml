@@ -22,4 +22,16 @@
     <string name="vous_ne_pouvez_pas_continuer_sans_faire_de_mise_jour">You cannot continue without updating.</string>
     <string name="advertisement">Advertisement</string>
     <string name="vous_avez_la_derni_re_version_disponible_de_l_application">You have the latest version of the application available.</string>
+    <string name="home">HOME</string>
+    <string name="previous">PREVIOUS</string>
+    <string name="reload">RELOAD</string>
+    <string name="next">NEXT</string>
+    <string name="abouts">ABOUTS</string>
+    <string name="contacts">CONTACTS</string>
+    <string name="exit">EXIT</string>
+    <string name="contact_message">Hello, if you encounter a problem or have a concern to submit to the developer, please write to: tetyconstantve@gmail.com</string>
+    <string name="contact_title">CONTACT US !</string>
+    <string name="contact_btn">Let\'s continue</string>
+    <string name="about_us">ABOUT US !</string>
+    <string name="about_message">Discover our application designed to watch free Anime, Manga and Manhwa content!\nWe wish you good viewing.\nFor questions write to us: tetyconstantve@gmail.com</string>
 </resources>

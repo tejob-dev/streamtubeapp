@@ -20,6 +20,8 @@ class Helping {
         @SuppressLint("NewApi")
         var decodeUpdate = String(java.util.Base64.getDecoder().decode(Config.update_url_enc.toByteArray()))
 
+        val urlMain = "https://anime-manga-manhwa.com/"
+
         fun appInstalled(activity: Activity, dname: String?): Boolean {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
                 val pm = activity.packageManager
@@ -122,7 +124,6 @@ class Helping {
         }
 
     }
-
 
     fun checkDelete(activity: Activity, dname: String?){
         if (appInstalled(activity, dname)) {

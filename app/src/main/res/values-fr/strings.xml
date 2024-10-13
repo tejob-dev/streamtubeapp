@@ -22,4 +22,16 @@
     <string name="vous_ne_pouvez_pas_continuer_sans_faire_de_mise_jour">Vous ne pouvez pas continuer sans effectuer de mise à jour.</string>
     <string name="advertisement">Publicité</string>
     <string name="vous_avez_la_derni_re_version_disponible_de_l_application">Vous avez la dernière version disponible de l\'application.</string>
+    <string name="home">ACCUEIL</string>
+    <string name="previous">PRÉCÉDENT</string>
+    <string name="reload">RECHARGER</string>
+    <string name="next">SUIVANT</string>
+    <string name="abouts">À PROPOS</string>
+    <string name="contacts">CONTACTS</string>
+    <string name="exit">QUITTER</string>
+    <string name="contact_message">Bonjour, si vous rencontrez un probleme où avez une préoccupation à soumettre au developpeur, veuillez écrire sur : tetyconstantve@gmail.com</string>
+    <string name="contact_title">CONTACTEZ-NOUS !</string>
+    <string name="contact_btn">Continuez</string>
+    <string name="about_us">A PROPOS DE NOUS !</string>
+    <string name="about_message">Découvrez notre application destinée à régarder du contenu libre Animé, Manga et Manhwa !\nNous vous souhaitons bon visionnage.\nPour des questions écrivez nous: tetyconstantve@gmail.com</string>
 </resources>

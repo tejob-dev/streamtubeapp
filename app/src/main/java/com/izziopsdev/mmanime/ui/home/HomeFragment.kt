@@ -22,6 +22,10 @@ class HomeFragment : Fragment() {
     private lateinit var progressBar: ProgressBar
     private lateinit var viewModel: HomeViewModel
 
+    fun getWebview(): WebView {
+        return webView
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
