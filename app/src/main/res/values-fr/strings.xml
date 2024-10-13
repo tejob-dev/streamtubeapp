@@ -34,4 +34,6 @@
     <string name="contact_btn">Continuez</string>
     <string name="about_us">A PROPOS DE NOUS !</string>
     <string name="about_message">Découvrez notre application destinée à régarder du contenu libre Animé, Manga et Manhwa !\nNous vous souhaitons bon visionnage.\nPour des questions écrivez nous: tetyconstantve@gmail.com</string>
+    <string name="can_t_go_back">Retour en arrière impossible</string>
+    <string name="can_t_go_next">Impossible d\'aller au suivant</string>
 </resources>

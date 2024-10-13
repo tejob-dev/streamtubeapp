@@ -3,7 +3,9 @@ package com.izziopsdev.mmanime
 import android.content.res.ColorStateList
 import android.graphics.Color
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
@@ -43,9 +45,10 @@ class MainActivity : AppCompatActivity() {
 
         val drawerLayout: DrawerLayout = binding.drawerLayout
         val navView: NavigationView = binding.navView
-        val navController = findNavController(R.id.nav_host_fragment_content_main)
+//        val navController = findNavController(R.id.nav_host_fragment_content_main)
         // Passing each menu ID as a set of Ids because each
-        val currentFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment_content_main)
+        val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment_content_main)
+        val currentFragment = navHostFragment?.childFragmentManager?.fragments?.last()
         // menu should be considered as top level destinations.
 
         // Set up the drawer menu item click listener
@@ -54,11 +57,19 @@ class MainActivity : AppCompatActivity() {
                 R.id.nav_home -> {
                     // Handle "Home" menu item click
 //                    navController.navigate(R.id.nav_home)
+//                    Log.d("ANDROID DEB", currentFragment?.javaClass.toString())
+//                    Log.d("ANDROID DEB", currentFragment?.fragmentManager?.fragments?.size.toString())
+//                    currentFragment?.fragmentManager?.fragments?.map {
+//                        Log.d("ANDROID DEB", ((it is HomeFragment).toString()) )
+//                    }
+//
+//                    Log.d("ANDROID DEBUG", "CONTENT")
                     if(currentFragment is HomeFragment){
-                        currentFragment.getWebview()?.let{
+                        (currentFragment as HomeFragment).getWebview()?.let{
                             it.loadUrl(Helping.urlMain)
                         }
                     }
+//                    Toast.makeText(this, "Account", Toast.LENGTH_SHORT).show()
                 }
                 R.id.nav_prev -> {
                     // Handle "Previous" menu item click
@@ -67,9 +78,13 @@ class MainActivity : AppCompatActivity() {
                         currentFragment.getWebview()?.let{
                             if(it.canGoBack()){
                                 it.goBack()
+                            }else{
+                                Toast.makeText(this,
+                                    getString(R.string.can_t_go_back), Toast.LENGTH_SHORT).show()
                             }
                         }
                     }
+//                    Toast.makeText(this, "Setting", Toast.LENGTH_SHORT).show()
                 }
                 R.id.nav_refresh -> {
                     // Handle "Previous" menu item click
@@ -87,6 +102,9 @@ class MainActivity : AppCompatActivity() {
                         currentFragment.getWebview()?.let{
                             if(it.canGoForward()){
                                 it.goForward()
+                            }else{
+                                Toast.makeText(this,
+                                    getString(R.string.can_t_go_next), Toast.LENGTH_SHORT).show()
                             }
                         }
                     }
@@ -158,7 +176,7 @@ class MainActivity : AppCompatActivity() {
 //            ), drawerLayout
 //        )
 //        setupActionBarWithNavController(navController, appBarConfiguration)
-        navView.setupWithNavController(navController)
+//        navView.setupWithNavController(navController)
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

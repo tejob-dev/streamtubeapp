@@ -34,4 +34,6 @@
     <string name="contact_btn">Let\'s continue</string>
     <string name="about_us">ABOUT US !</string>
     <string name="about_message">Discover our application designed to watch free Anime, Manga and Manhwa content!\nWe wish you good viewing.\nFor questions write to us: tetyconstantve@gmail.com</string>
+    <string name="can_t_go_back">Cant go back</string>
+    <string name="can_t_go_next">Cant go next</string>
 </resources>
