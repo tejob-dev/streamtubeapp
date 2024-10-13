@@ -3,6 +3,7 @@ package com.izziopsdev.mmanime.ui.home
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.izziopsdev.mmanime.util.Helping
 
 class HomeViewModel : ViewModel() {
 
@@ -13,7 +14,7 @@ class HomeViewModel : ViewModel() {
     val isLoading: LiveData<Boolean> = _isLoading
 
     init {
-        _url.value = "https://anime-manga-manhwa.com/"
+        _url.value = Helping.urlMain
         _isLoading.value = true
     }
 
