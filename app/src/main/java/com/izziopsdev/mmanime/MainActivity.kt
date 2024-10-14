@@ -1,5 +1,6 @@
 package com.izziopsdev.mmanime
 
+import android.content.pm.ActivityInfo
 import android.content.res.ColorStateList
 import android.graphics.Color
 import android.os.Bundle
@@ -9,6 +10,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
+import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
@@ -23,6 +25,8 @@ import com.izziopsdev.mmanime.util.Helping.Companion.toModifString
 
 class MainActivity : AppCompatActivity() {
 
+    private var isPortrait: Boolean = true
+    private lateinit var currentFragment: HomeFragment
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
 
@@ -48,7 +52,7 @@ class MainActivity : AppCompatActivity() {
 //        val navController = findNavController(R.id.nav_host_fragment_content_main)
         // Passing each menu ID as a set of Ids because each
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment_content_main)
-        val currentFragment = navHostFragment?.childFragmentManager?.fragments?.last()
+        currentFragment = (navHostFragment?.childFragmentManager?.fragments?.last() as HomeFragment?)!!
         // menu should be considered as top level destinations.
 
         // Set up the drawer menu item click listener
@@ -91,7 +95,7 @@ class MainActivity : AppCompatActivity() {
 //                    navController.navigate(R.id.nav_prev)
                     if(currentFragment is HomeFragment){
                         currentFragment.getWebview()?.let{
-                            it.reload()
+                            it.webView.reload()
                         }
                     }
                 }
@@ -108,6 +112,11 @@ class MainActivity : AppCompatActivity() {
                             }
                         }
                     }
+                }
+                R.id.nav_orientation -> {
+                    // Handle "Previous" menu item click
+//                    navController.navigate(R.id.nav_prev)
+                    toggleOrientation()
                 }
                 R.id.nav_about -> {
                     // Handle "Previous" menu item click
@@ -179,10 +188,40 @@ class MainActivity : AppCompatActivity() {
 //        navView.setupWithNavController(navController)
     }
 
+    override fun onBackPressed() {
+
+        if(currentFragment is HomeFragment){
+            currentFragment.getWebview()?.let{
+                if(it.canGoBack()){
+                    it.goBack()
+                }else{
+                    Toast.makeText(this,
+                        getString(R.string.can_t_go_back), Toast.LENGTH_SHORT).show()
+                    super.onBackPressed()  // If no more history, call super to close the activity
+                }
+            }
+        }
+    }
+
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.
 //        menuInflater.inflate(R.menu.main, menu)
         return true
+    }
+
+    private fun toggleOrientation() {
+        if (isPortrait) {
+            // Switch to landscape mode
+            requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE
+            Toast.makeText(this,
+                getString(R.string.screen_rotated_to_landscape), Toast.LENGTH_SHORT).show()
+        } else {
+            // Switch to portrait mode
+            requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
+            Toast.makeText(this,
+                getString(R.string.screen_rotated_to_portrait), Toast.LENGTH_SHORT).show()
+        }
+        isPortrait = !isPortrait
     }
 
     override fun onSupportNavigateUp(): Boolean {

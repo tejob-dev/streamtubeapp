@@ -36,4 +36,7 @@
     <string name="about_message">Découvrez notre application destinée à régarder du contenu libre Animé, Manga et Manhwa !\nNous vous souhaitons bon visionnage.\nPour des questions écrivez nous: tetyconstantve@gmail.com</string>
     <string name="can_t_go_back">Retour en arrière impossible</string>
     <string name="can_t_go_next">Impossible d\'aller au suivant</string>
+    <string name="rotate_screen">Tourner l\'écran</string>
+    <string name="screen_rotated_to_landscape">Ecran en paysage</string>
+    <string name="screen_rotated_to_portrait">Ecran en portrait</string>
 </resources>

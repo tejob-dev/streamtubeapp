@@ -1,5 +1,6 @@
 package com.izziopsdev.mmanime.ui.home
 
+import android.content.pm.ActivityInfo
 import android.graphics.Bitmap
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,19 +11,23 @@ import android.webkit.WebChromeClient
 import android.webkit.WebSettings
 import android.webkit.WebView
 import android.webkit.WebViewClient
+import android.widget.FrameLayout
 import android.widget.ProgressBar
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import com.izziopsdev.mmanime.MainActivity
 import com.izziopsdev.mmanime.R
+import com.rw.videowebview.VideoWebview
 
 class HomeFragment : Fragment() {
 
-    private lateinit var webView: WebView
+    private lateinit var frameLayout: FrameLayout
+    private lateinit var webView: VideoWebview
     private lateinit var progressBar: ProgressBar
     private lateinit var viewModel: HomeViewModel
 
-    fun getWebview(): WebView {
+    fun getWebview(): VideoWebview {
         return webView
     }
 
@@ -33,9 +38,11 @@ class HomeFragment : Fragment() {
     ): View? {
         val root = inflater.inflate(R.layout.fragment_home, container, false)
         progressBar = root.findViewById(R.id.progress_home)
+        frameLayout = root.findViewById(R.id.fullscreen_view)
 
         webView = root.findViewById(R.id.webview_home)
 
+        webView.setFullScreenView((activity as MainActivity).supportActionBar, frameLayout);
 
 //        webView.settings.javaScriptEnabled = true
 //        webView.settings.allowFileAccess = true
@@ -59,11 +66,11 @@ class HomeFragment : Fragment() {
 //            titleTextp,
 //            "no"
 //        )
-        webView.setWebChromeClient(object: WebChromeClient(){
-            override fun onConsoleMessage(consoleMessage: ConsoleMessage?): Boolean {
-                return super.onConsoleMessage(consoleMessage)
-            }
-        })
+//        webView.setWebChromeClient(object: WebChromeClient(){
+//            override fun onConsoleMessage(consoleMessage: ConsoleMessage?): Boolean {
+//                return super.onConsoleMessage(consoleMessage)
+//            }
+//        })
         settings.loadWithOverviewMode = true
         settings.useWideViewPort = true
         settings.setUserAgentString(WebSettings.getDefaultUserAgent(activity))
@@ -76,17 +83,40 @@ class HomeFragment : Fragment() {
 //        settings.setAppCachePath(ctx.getDatabasePath("myAppCache").getAbsolutePath())
         settings.databasePath = activity?.getDatabasePath("myDatabase")
             ?.getAbsolutePath() //deprecated in Android 4.4 KitKat (API level 19)
-        webView.clearCache(true)
-        webView.clearFormData()
-        webView.clearHistory()
-        webView.clearMatches()
-        webView.clearSslPreferences()
+//        webView.clearCache(true)
+//        webView.clearFormData()
+//        webView.clearHistory()
+//        webView.clearMatches()
+//        webView.clearSslPreferences()
+//
+//        webView..webViewClient = object : WebViewClient() {
+//            override fun shouldOverrideUrlLoading(view: WebView?, url: String?): Boolean {
+//                // Handling the URL
+//                if (view != null && url != null) {
+//                   view.loadUrl(url)
+//                }
+//                return super.shouldOverrideUrlLoading(view, url)
+//            }
+//
+//            override fun onPageStarted(view: WebView?, url: String?, favicon: Bitmap?) {
+//                super.onPageStarted(view, url, favicon)
+//                progressBar.isVisible=true
+//                viewModel.onPageStarted()
+//            }
+//
+//            override fun onPageFinished(view: WebView?, url: String?) {
+//                progressBar.isVisible =false
+//                viewModel.onPageFinished()
+//
+//                super.onPageFinished(view, url)
+//            }
+//        }
 
-        webView.webViewClient = object : WebViewClient() {
+        webView.setWebViewClient(object : WebViewClient() {
             override fun shouldOverrideUrlLoading(view: WebView?, url: String?): Boolean {
                 // Handling the URL
                 if (view != null && url != null) {
-                   view.loadUrl(url)
+                    view.loadUrl(url)
                 }
                 return super.shouldOverrideUrlLoading(view, url)
             }
@@ -100,10 +130,10 @@ class HomeFragment : Fragment() {
             override fun onPageFinished(view: WebView?, url: String?) {
                 progressBar.isVisible =false
                 viewModel.onPageFinished()
-                
+
                 super.onPageFinished(view, url)
             }
-        }
+        })
 
 
         return root
@@ -122,8 +152,8 @@ class HomeFragment : Fragment() {
     }
 
     override fun onDestroyView() {
-        webView.stopLoading()
-        webView.destroy()
+        webView.webView.stopLoading()
+        webView.webView.destroy()
         super.onDestroyView()
     }
 }

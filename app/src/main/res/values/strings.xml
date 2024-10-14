@@ -36,4 +36,7 @@
     <string name="about_message">Discover our application designed to watch free Anime, Manga and Manhwa content!\nWe wish you good viewing.\nFor questions write to us: tetyconstantve@gmail.com</string>
     <string name="can_t_go_back">Cant go back</string>
     <string name="can_t_go_next">Cant go next</string>
+    <string name="rotate_screen">Rotate screen</string>
+    <string name="screen_rotated_to_landscape">Screen rotated to Landscape</string>
+    <string name="screen_rotated_to_portrait">Screen rotated to portrait</string>
 </resources>

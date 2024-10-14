@@ -21,6 +21,10 @@
             android:icon="@drawable/ic_menu_next"
             android:title="@string/next" />
         <item
+            android:id="@+id/nav_orientation"
+            android:icon="@drawable/ic_menu_orientation"
+            android:title="@string/rotate_screen" />
+        <item
             android:id="@+id/nav_about"
             android:icon="@drawable/ic_menu_about"
             android:title="@string/abouts" />

@@ -70,4 +70,8 @@ dependencies {
 
     //updater
 //    implementation 'com.github.javiersantos:AppUpdater:2.7'
+
+    //FULLSCREEN
+//    implementation 'com.github.RachitShah02:Webview-Video-Fullscreen:1.0.2'
+    implementation 'com.github.ravindu1024:video-webview:1.0.0'
 }
